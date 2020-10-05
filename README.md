@@ -3,7 +3,7 @@
 This is a web-based VR application that allows you to navigate through a decorated room and interact with select objects. The application was created using the A-Frame web framework. This project was completed for the purposes of the CS 5331 Virtual Reality class at Texas Tech University. 
 
 ## Useful Links:
-* The demo video for this project can be found [here]()
+* The demo video for this project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Demo%20Video.mp4)
 * The screenshots for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/tree/main/Screenshots)
 * The source code for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/index.html)
 * The web application for the project can be found [here](https://karishmagarikapalli.github.io/VR-Project-1/)
@@ -35,6 +35,7 @@ A human scale scene experienced from the 'inside out'
 ![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/After%20COVID.png)
 
 ### Demo Video
+![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Demo%20Video.mp4)
 
 ### Interaction Instructions
  (Hover on the object instead of clicking on it)
