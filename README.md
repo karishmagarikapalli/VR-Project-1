@@ -4,10 +4,10 @@ This is a web-based VR application that allows you to navigate through a decorat
 
 ## Useful Links:
 * The demo video for this project can be found [here]()
-* The images for the project can be found [here]()
-* The source code for the project can be found [here]()
+* The screenshots for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/tree/main/Screenshots)
+* The source code for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/index.html)
 * The web application for the project can be found [here](https://karishmagarikapalli.github.io/VR-Project-1/)
-* The assets for the project can be found [here]()
+* The assets for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/tree/main/assets)
 * The Report for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/README.md)
 
 ## What does this project have?
@@ -18,6 +18,7 @@ A human scale scene experienced from the 'inside out'
 * Interactable objects
 
 ### Project Screenshots
+![alttext](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/After%20COVID.png "After COVID")
 
 ### Demo Video
 
