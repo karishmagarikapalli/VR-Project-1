@@ -31,6 +31,7 @@ A human scale scene experienced from the 'inside out'
 * HTML
 * JavaScript
 * A-Frame
+* WebStorm IDE
 
 ## Before and After COVID
 The biggest impact COVID had on my life is forcing me indoors. I have since then adapted on multiple levels to the new lifestyle. Ever since TTU opened I have incorporated a few things in my living environment, like a COVID poster by the main door to remind myself to be safe everytime I step out and a sanitizer station as I enter the apartment.
