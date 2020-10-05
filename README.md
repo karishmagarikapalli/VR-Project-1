@@ -8,7 +8,7 @@ This is a web-based VR application that allows you to navigate through a decorat
 * The source code for the project can be found [here]()
 * The web application for the project can be found [here](https://karishmagarikapalli.github.io/VR-Project-1/)
 * The assets for the project can be found [here]()
-* The Report for the project can be found [here]()
+* The Report for the project can be found [here](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/README.md)
 
 ## What does this project have?
 A human scale scene experienced from the 'inside out'
