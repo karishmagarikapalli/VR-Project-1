@@ -18,7 +18,21 @@ A human scale scene experienced from the 'inside out'
 * Interactable objects
 
 ### Project Screenshots
-![alttext](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/After%20COVID.png "After COVID")
+
+* Living Room
+![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/Living%20Room.png)
+
+* Kitchen
+![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/Kitchen.png)
+
+* Bed Room
+![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/Bed%20Room.png)
+
+* Before COVID
+![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/Before%20COVID.png)
+
+* After COVID
+![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/After%20COVID.png)
 
 ### Demo Video
 
