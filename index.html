@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link href="./images/headset.png" rel="icon">
+    <link href="./images/vr-headset.png" rel="apple-touch-icon">
+    <script src="libs/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="libs/tap-to-teleport.js" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+<a-scene>
+    &lt;!&ndash;-Camera Controls&ndash;&gt;
+        <a-camera universal-controls>
+            <a-entity cursor="fuse: true;"
+                      position="0 0 -1"
+                      geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.02"
+                      material="color: gray; shader: flat" >
+                <a-animation begin="click" easing="ease-in" attribute="scale" dur="150"
+                             fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500"
+                             fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+            </a-entity>
+        </a-camera>
+
+    <a-assets>
+
+    </a-assets>
+
+    <script type="text/javascript">
+        let covidMode = true;
+
+        function covid()
+        {
+            let text = document.getElementById("text");
+            let button = document.getElementById("button");
+            let x, i;
+            x =  document.querySelectorAll(".covid");
+            if (!covidMode) {
+                text.setAttribute('value', 'COVID');
+                button.setAttribute('color', 'blue');
+                for (i = 0; i < x.length; i++) {
+                    x[i].setAttribute('visible', 'true');
+                }
+                covidMode = true;
+            } else {
+                text.setAttribute('value', 'Normal');
+                button.setAttribute('color', 'black');
+                for (i = 0; i < x.length; i++) {
+                    x[i].setAttribute('visible', 'false');
+                }
+                covidMode = false;
+            }
+        }
+    </script>
+
+    <!--- Instructions --->
+    <a-text value="Interactable Models: (Hover on the object instead of clicking on it)" position="2.62 2.768 -12.092"></a-text>
+    <a-text value="1. COVID mode on and off" position="2.62 2.368 -12.092"></a-text>
+    <a-text value="2. On and Off switch in the Living Room" position="2.62 2.168 -12.092"></a-text>
+    <a-text value="3. Door between the Bedroom and Living Room" position="2.62 1.968 -12.092"></a-text>
+    <a-text value="4. Laptop plays the startup sound " position="2.62 1.768 -12.092"></a-text>
+
+    <!---sky color--->
+    <a-sky color="#6879ec"></a-sky>
+
+    <!---Ceiling--->
+    <a-entity static-body geometry="primitive: box; depth: 24; height: 0.4; width: 35" position="7.882 10 -1.639" material="shader: flat; side: double; opacity: 1;
+src: url(images/ceiling.jpg); repeat: 12 5"></a-entity>
+
+    <!---Floor--->
+    <a-entity static-body geometry="primitive: box; depth: 24; height: 0.4; width: 35" position="7.882 -0.5 -1.639" material="shader: flat; side: double; opacity: 1;
+src: url(images/floor.jpg); repeat: 20 12"></a-entity>
+
+    <!---Outter Walls--->
+    <a-entity static-body="" geometry="width:24;height:14" position="-9.302 2.933 -1.775"
+              rotation="0 90 0" material="roughness:1;src:images/teal.png"></a-entity>
+
+    <a-entity static-body="" geometry="width:36;height:14" position="8.183 2.933 9.584"
+              rotation="0 180 0" material="repeat:2 1;roughness:1;src:images/teal.png"></a-entity>
+
+    <a-entity static-body="" geometry="width:36;height:14" position="8.183 2.933 -13.314"
+              rotation="0 180 0" material="repeat:2 1;roughness:1;src:images/texturewall.jpg"></a-entity>
+
+    <a-entity static-body="" geometry="height:14;width:23" position="25 2.933 -2"
+              rotation="0 90 0" material="repeat:1 1;roughness:1;src:images/teal.png"></a-entity>
+
+    <!---inner walls bedroom--->
+    <a-entity static-body="" geometry="width:19;height:14" position="7.986 2.933 0.53"
+              rotation="0 90 0" material="repeat:1 1;roughness:1;src:images/teal.png"></a-entity>
+
+    <a-entity static-body="" geometry="depth:0.95;height:6.7;width:5" position="7.986 7.2 -10.73"
+              material="roughness:1;src:images/teal.png" rotation="0 90 0"></a-entity>
+
+    <a-entity static-body="" geometry="width:2;height:14" position="7.986 2.933 -11.963"
+              rotation="0 90 0" material="roughness:1;src:images/teal.png"></a-entity>
+
+<!--- Bedroom--->
+    <!---Carpet-->
+    <a-entity static-body="" geometry="height:0.101;depth:24;width:16.5" position="16.266 -0.495 -1.104"
+              material="repeat:20 12;shader:flat;side:double;src:images/floor.jpg"></a-entity>
+
+    <!--- Vent --->
+    <a-obj-model src="assets/vent.obj" position="9.8 5 7" scale="1 1 1"
+                 rotation="0 120 0" material=""></a-obj-model>
+
+    <!---Bed--->
+    <a-obj-model src="assets/modernbed.obj" mtl="assets/modernbed.mtl" position="17.077 0.045 3.321" rotation="0 180 0"
+                 scale="1 1 1" material=""></a-obj-model>
+
+    <!--<a-gltf-model src="assets/wood_table/scene.gltf" position="23.077 -0.045 3.221"
+                  scale="0.254 0.076 0.068" gltf-model="assets/wood_table/scene.gltf"></a-gltf-model>
+-->
+
+    <!---Desk--->
+    <a-gltf-model src="assets/wood_table/scene.gltf" position="10.24 0.269 0.005" scale="0.254 0.159 0.185"
+                  gltf-model="assets/wood_table/scene.gltf"></a-gltf-model>
+
+    <!---Laptop--->
+    <a-obj-model src="assets/laptop.obj" mtl="assets/laptop.mtl" position="10.915 1.292 0.709"
+                 rotation="-90 0 0" scale="0.01 0.01 0.01" material=""></a-obj-model>
+        <!--- Startup --->
+    <a-box material="color:tomato;transparent:true;opacity:0" depth="2" height="2" width="2"
+           sound="src: url(assets/windows.wav); on: click" class="intersectable" position="10.915 1.292 0.709"></a-box>
+
+
+    <!---Alarm Clock--->
+    <a-gltf-model src="assets/alarm_clock/scene.gltf" position="23 1.4 3.6" rotation="0 -51.05053954615635 0" scale="4 4 4"
+                  gltf-model="assets/alarm_clock/scene.gltf"></a-gltf-model>
+
+    <!---Computer Chair--->
+    <a-obj-model src="assets/chair1.obj" mtl="assets/chair1.mtl" position="12.646 -0.942 0.982"
+                  scale="0.01 0.01 0.01" rotation="-90 0 0"></a-obj-model>
+
+    <!--- TV --->
+    <a-obj-model src="assets/tv1.obj" mtl="assets/tv1.mtl" position="21.846 0.744 -9.531" scale="0.01 0.01 0.01"
+                 rotation="-90 135 0" material=""></a-obj-model>
+    <a-gltf-model src="assets/wood_table/scene.gltf" position="21.26 0.075 -10.362" scale="0.254 0.103 0.185"
+                  gltf-model="assets/wood_table/scene.gltf" rotation="0 45 0"></a-gltf-model>
+
+    <!--- Posters --->
+        <!--- Bedroom Poster --->
+    <a-entity static-body="" geometry="height:5;width:4" position="16.178 4.000 9.541"
+              material="repeat:1 1;roughness:1;src:images/poster.jpg" scale="1 0.828 1"></a-entity>
+
+    <!--- COVID Poster --->
+    <a-entity class="covid" static-body="" geometry="height:3;width:2" position="-9.000 3.000 4.775"
+              rotation="0 90 0" material="repeat:1 1;roughness:1;src:images/ttuposter.png" scale="1 0.828 1"></a-entity>
+
+
+    <!--- Dresser --->
+    <a-obj-model src="assets/dresser.obj" mtl="assets/dresser.mtl" position="23.057 0.597 2.5"
+                 rotation="0 180 0" material=""></a-obj-model>
+
+    <!--- Couch --->
+    <a-obj-model src="assets/couch1.obj" mtl="assets/couch1.mtl" scale="3 3 3" position="17.297 0 -5.263"
+                 rotation="0 -45 0" material=""></a-obj-model>
+
+    <!--- Desk Lamp --->
+    <a-obj-model src="assets/desklamp.obj" mtl="assets/desklamp.mtl"
+                 position="9.751 1.964 -0.911" rotation="0 58.097920426265475 0" material=""></a-obj-model>
+
+    <!--- Bedroom Door --->
+    <a-obj-model id="door1" src="assets/door.obj" mtl="assets/door.mtl" position="8.038 -0.463 -9.936"
+                 scale="0.013 0.013 0.04" material="" rotation="0 90 0" class="intersectable">
+    </a-obj-model>
+
+    <!--- Open --->
+    <a-box material="color:tomato;transparent:true;opacity:0" depth="3" height="6" width="1" position="8.038 -0.463 -9.936"
+           event-set__1="_event: click; _target: #door1; position: 9.419 -0.463 -8.324;"
+           event-set__2="_event: click; _target: #door1; rotation: 0 0 0;"></a-box>
+
+    <!--- Close --->
+    <a-box material="color:tomato;transparent:true;opacity:0" depth="1" height="6" width="3" position="9.419 -0.463 -8.324"
+           event-set__1="_event: click; _target: #door1; position: 8.038 -0.463 -9.936;"
+           event-set__2="_event: click; _target: #door1; rotation: 0 90 0;"></a-box>
+
+    <!--- Main Door --->
+    <a-obj-model id="door1" src="assets/door.obj" mtl="assets/door.mtl" position="-8.000 -0.463 2.000"
+                 scale="0.013 0.013 0.04" material="" rotation="0 90 0" class="intersectable">
+    </a-obj-model>
+
+<!--- Kitchen --->
+    <!--- Stove --->
+    <a-gltf-model src="assets/stove/scene.gltf" scale="0.505 0.505 0.505" rotation="0 180 0" material=""
+                  position="29.205 -0.511 19.843" gltf-model="assets/stove/scene.gltf"></a-gltf-model>
+
+    <!--- Counters --->
+    <a-gltf-model src="assets/single_counter/scene.gltf" position="-1 -0.397 8.695" rotation="0 90 0"
+                  scale="0.015 0.017 0.015" gltf-model="assets/single_counter/scene.gltf"></a-gltf-model>
+
+    <a-gltf-model src="assets/single_counter/scene.gltf" position="-2.194 -0.397 8.695" rotation="0 90 0"
+                  scale="0.015 0.017 0.015" gltf-model="assets/single_counter/scene.gltf"></a-gltf-model>
+
+    <a-gltf-model src="assets/single_counter/scene.gltf" position="-3.625 -0.397 8.695" rotation="0 90 0"
+                  scale="0.015 0.017 0.015" gltf-model="assets/single_counter/scene.gltf"></a-gltf-model>
+
+    <a-gltf-model src="assets/single_counter/scene.gltf" position="2.342 -0.397 8.695" rotation="0 90 0"
+                  scale="0.015 0.017 0.015" gltf-model="assets/single_counter/scene.gltf"></a-gltf-model>
+
+    <a-gltf-model src="assets/single_counter/scene.gltf" position="3.676 -0.397 8.695" rotation="0 90 0"
+                  scale="0.015 0.017 0.015" gltf-model="assets/single_counter/scene.gltf"></a-gltf-model>
+
+
+    <a-gltf-model src="assets/single_counter/scene.gltf" position="7.231 -0.397 0.58" rotation="0 180 0"
+                  scale="0.015 0.017 0.015" gltf-model="assets/single_counter/scene.gltf"></a-gltf-model>
+
+    <!--- Microwave --->
+    <a-obj-model src="assets/microwave.obj" mtl="assets/microwave.mtl" position="-4.399 1.335 8.061"
+                 rotation="0 135 0" scale="0.03 0.03 0.03" material=""></a-obj-model>
+
+    <!--- Fridge --->
+    <a-gltf-model src="assets/fridge/scene.gltf" position="6.391 1.842 2.984"
+                  rotation="0 180 0" scale="0.5 0.5 0.5" gltf-model="assets/fridge/scene.gltf"></a-gltf-model>
+
+    <!--- Dining Table --->
+    <a-gltf-model src="assets/wood_table/scene.gltf" position="-2.987 0.269 1.769"
+                  scale="0.254 0.127 0.169" gltf-model="assets/wood_table/scene.gltf" rotation="0 90 0"></a-gltf-model>
+
+    <!--- Chairs --->
+    <a-obj-model src="assets/chair1.obj" mtl="assets/chair1.mtl" position="-2.00 -0.942 0.869"
+                 rotation="-90 90 0" scale="0.01 0.01 0.01" material=""></a-obj-model>
+
+    <a-obj-model src="assets/chair1.obj" mtl="assets/chair1.mtl" position="-0.246 -0.942 1.752"
+                 rotation="-90 0 0" scale="0.01 0.01 0.01" material=""></a-obj-model>
+
+    <a-obj-model src="assets/chair1.obj" mtl="assets/chair1.mtl" position="-3.874 -0.942 1.752"
+                 rotation="-90 180 0" scale="0.01 0.01 0.01" material=""></a-obj-model>
+
+    <a-obj-model src="assets/chair1.obj" mtl="assets/chair1.mtl" position="-2.00 -0.942 3.085"
+                 rotation="-90 270 0" scale="0.01 0.01 0.01" material=""></a-obj-model>
+
+
+<!--- Living Room --->
+    <!--- Couch --->
+    <a-gltf-model src="assets/leather_sectional_couch/scene.gltf" position="-7.036 -0.498 -4.993" rotation="0 90 0"
+                  scale="0.01 0.01 0.01" gltf-model="assets/leather_sectional_couch/scene.gltf"></a-gltf-model>
+
+    <a-gltf-model src="assets/leather_black_sofa/scene.gltf" position="-0.296 -0.93 -2.315" rotation="0 -135 0"
+                  scale="1.2 1.2 1.2" gltf-model="assets/leather_black_sofa/scene.gltf"></a-gltf-model>
+
+    <!--- TV + Table--->
+    <a-obj-model src="assets/tv1.obj" mtl="assets/tv1.mtl" position="-1.375 0.75 -11.474"
+                 scale="0.01 0.01 0.01" rotation="-90 180 0" material=""></a-obj-model>
+
+    <a-gltf-model src="assets/wood_table/scene.gltf" position="-2.382 0.075 -11.39" scale="0.254 0.103 0.185"
+                  gltf-model="assets/wood_table/scene.gltf" rotation="0 90 0"></a-gltf-model>
+
+    <!--- Vent --->
+    <a-obj-model src="assets/vent.obj" position="6.2 5 -19" scale="1 1 1"
+                 rotation="0 -60 0" material=""></a-obj-model>
+
+    <!--- Front Table --->
+    <a-obj-model class="covid" src="assets/fronttable.obj" mtl="assets/fronttable.mtl" position="-6.6 0 -1" scale="0.001 0.001 0.001"
+                 rotation="0 90 0" material=""></a-obj-model>
+
+    <!--- Hand Sanitizer --->
+    <a-obj-model class="covid" src="assets/sanitizer.obj" mtl="assets/sanitizer.mtl" position="-6.45 0.7 -1.16" scale="0.1 0.1 0.1"
+                 rotation="0 90 0" material=""></a-obj-model>
+
+    <!--- Ambient Lighting --->
+    <a-light type="ambient" color="#222"></a-light>
+
+    <!--- Smoke Detector --->
+    <a-obj-model src="assets/smoke_detector.obj" mtl="assets/smoke_detector.mtl" position="-7.000 9.500 2.775" scale="0.5 0.5 0.5"
+                 rotation="180 0 0" material=""></a-obj-model>
+
+    <!--- Lightbulbs --->
+        <!--- LIVING ROOM -->
+    <a-obj-model src="assets/LED.obj" mtl="assets/LED.mtl" position="-1.457 8.901 -7.107"
+                 rotation="0 0 0" scale="0.1 0.1 0.1" material=""></a-obj-model>
+    <a-light type="point" position="-1.457 5.5 -7.00" light="distance:12;color:#fffffb" id="Living_Light1"></a-light>
+    <a-light type="point" position="-1.457 5.5 -7.20" light="distance:12;color:#fffffb" id="Living_Light2"></a-light>
+
+    <a-obj-model src="assets/LED.obj" mtl="assets/LED.mtl" position="-1.457 8.901 1.433"
+                 rotation="0 0 0" scale="0.1 0.1 0.1" material=""></a-obj-model>
+    <a-light type="point" position="-1.457 5.5 1.3" light="distance:12;color:#fffffb" id="Living_Light3"></a-light>
+    <a-light type="point" position="-1.457 5.5 1.5" light="distance:12;color:#fffffb" id="Living_Light4"></a-light>
+
+            <!--- Light Switch --->
+    <!---OFF-->
+    <a-obj-model src="assets/lightswitch.obj" mtl="assets/lightswitch.mtl"
+                 position="7.43 1.666 -3.941" rotation="0 90 0" material=""></a-obj-model>
+    <a-box id="box" material="color:tomato;transparent:true;opacity:0"
+           position="7.43 1.666 -2.00" height="1" depth="1" width="1"
+           event-set__1="_event: click; _target: #Living_Light1; distance: 0.01;"
+           event-set__2="_event: click; _target: #Living_Light2; distance: 0.01;"
+           event-set__3="_event: click; _target: #Living_Light3; distance: 0.01;"
+           event-set__4="_event: click; _target: #Living_Light4; distance: 0.01;"></a-box>
+
+    <!---ON-->
+    <a-obj-model src="assets/lightswitch.obj" mtl="assets/lightswitch.mtl"
+                 position="7.43 1.666 -2.00" rotation="0 90 0" material=""></a-obj-model>
+    <a-box id="box" material="color:tomato;transparent:true;opacity:0"
+           position="7.43 1.666 -3.941" height="1" depth="1" width="1"
+           event-set__1="_event: click; _target: #Living_Light1; distance: 12;"
+           event-set__2="_event: click; _target: #Living_Light2; distance: 12;"
+           event-set__3="_event: click; _target: #Living_Light3; distance: 12;"
+           event-set__4="_event: click; _target: #Living_Light4; distance: 12;"></a-box>
+
+        <!--- ON-OFF SIGN --->
+    <a-entity static-body="" geometry="width:1.5;depth:0.95"
+              position="7.934 1.674 -2.951" material="roughness:1;src:images/bulb.jpg" rotation="0 90 0"></a-entity>
+    <<!--a-text value="ON OFF" position="7.334 1.874 -2.251" rotation="0 -90 0" material="roughness:1"></a-text>-->
+    <!--&lt;!&ndash;- Choose Color Sign -&ndash;&gt;
+<a-entity static-body="" geometry="depth:0.95;width:1.5"
+          position="8.073 2.503 -5.093" material="roughness:1;src:images/choose_color.png" rotation="0 90 0"></a-entity>
+-->
+    <!-- BEDROOM LIGHTS -->
+    <a-obj-model src="assets/LED.obj" mtl="assets/LED.mtl"
+                 position="17.288 9.539 3.19" scale="0.1 0.1 0.1" material=""></a-obj-model>
+    <a-light type="point" position="17.288 4.844 3.19" light="distance:12;color:#fffffb" id="Bed_Room1"></a-light>
+
+
+    <a-obj-model src="assets/LED.obj" mtl="assets/LED.mtl"
+                 position="17.288 9.539 -5.19" scale="0.1 0.1 0.1" material=""></a-obj-model>
+    <a-light type="point" position="9.751 1.964 -0.911" light="distance:12;color:#fffffb" id="Bed_Room2"></a-light>
+
+    <!-- Desk Lamp -->
+    <a-light type="point" position="10.056 2.122 -0.752" light="distance:4;color:#fffffb" id="Lamp_Light"></a-light>
+
+    <a-entity onclick="covid()" position="-1.375 4.75 -11.474" rotation="0 0 0">
+        <a-text id="text" value="COVID" align="center" color="#fff" position="0 1.25 0.1" scale="1.5 1.5 1.5"></a-text>
+        <a-box position="0 0.375 0" width="0.75" height="0.75" depth="0.1" color="white"></a-box>
+        <a-box id="button" position="0 0.375 0" width="0.5" height="0.5" depth="0.15" color="blue"></a-box>
+    </a-entity>
+
+</a-scene>
+</body>
+</html>
