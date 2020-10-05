@@ -35,7 +35,7 @@ A human scale scene experienced from the 'inside out'
 ![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/After%20COVID.png)
 
 ### Demo Video
-![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Demo%20Video.mp4)
+[![](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Screenshots/Living%20Room.png)](https://github.com/karishmagarikapalli/VR-Project-1/blob/main/Demo%20Video.mp4)
 
 ### Interaction Instructions
  (Hover on the object instead of clicking on it)
